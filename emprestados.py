@@ -124,7 +124,7 @@ if uploaded_file is not None:
 if 'df_processed' in st.session_state:
     st.header("Download")
     output = io.BytesIO()
-    with pd.ExcelWriter(output, engine='openxl') as writer:
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:
         st.session_state['df_processed'].to_excel(writer, index=False, sheet_name='Jogos_e_Minutos')
 
     st.download_button(
